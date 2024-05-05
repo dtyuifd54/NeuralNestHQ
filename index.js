@@ -1,17 +1,9 @@
-function permute(nums) {
-  const result = [];
-  backtrack([]);
-  return result;
-  function backtrack(current) {
-    if (current.length === nums.length) {
-      result.push([...current]);
-      return;
-    }
-    for (const num of nums) {
-      if (current.includes(num)) continue;
-      current.push(num);
-      backtrack(current);
-      current.pop();
-    }
-  }
-}
+const pullAtIndex = (arr, pullArr) => {
+  let removed = [];
+  let pulled = arr
+    .map((v, i) => (pullArr.includes(i) ? removed.push(v) : v))
+    .filter((v, i) => !pullArr.includes(i));
+  arr.length = 0;
+  pulled.forEach((v) => arr.push(v));
+  return removed;
+};
