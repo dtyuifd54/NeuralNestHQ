@@ -1,2 +1,9 @@
-const countOccurrences = (arr, value) =>
-  arr.reduce((a, v) => (v === value ? a + 1 : a), 0);
+function squareDigits(num) {
+  return parseInt(
+    num
+      .toString()
+      .split("")
+      .map((digit) => digit ** 2)
+      .join(""),
+  );
+}
