@@ -1,9 +1,1 @@
-function squareDigits(num) {
-  return parseInt(
-    num
-      .toString()
-      .split("")
-      .map((digit) => digit ** 2)
-      .join(""),
-  );
-}
+const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
